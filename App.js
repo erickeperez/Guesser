@@ -9,7 +9,10 @@ import StartGameScreen from './screens/StartGameScreen'
 export default function App() {
   return (
     <View style={styles.screen}>
-      <Header title="Guess a Number" />
+      <Header 
+      title="Guess a Number"
+      style={styles.header}
+       />
       <StartGameScreen/>
     </View>
   );
@@ -20,4 +23,7 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1
   },
+  header: {
+    color: '#2d3436'
+  }
 });

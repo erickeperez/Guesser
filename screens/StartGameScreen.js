@@ -4,6 +4,7 @@ import Card from '../components/Card';
 import Colors from '../constants/colors';
 import Input from '../components/Input';
 import NumberContainer from '../components/NumberContainer';
+import colors from '../constants/colors';
 
 const StartGameScreen = props => {
 
@@ -50,7 +51,7 @@ const StartGameScreen = props => {
         <View style={styles.screen}>
             <Text style={styles.title}>Start a New Game!</Text>
             <Card style={styles.inputContainer}>
-                <Text>Select a Number</Text>
+                <Text color={colors.text}>Select a Number</Text>
                 <Input
                 style={styles.input} 
                 bluronSubmit
