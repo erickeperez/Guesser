@@ -7,70 +7,67 @@ import MainButton from '../components/MainButton';
 
 const GameOverScreen = props => {
     return (
-    <ScrollView>
+      <ScrollView>
         <View style={styles.screen}>
-            <TitleText> The Game is Over</TitleText>
-            <View style={styles.imageContainer}>
-                {/* <Image 
-                source={require('../assets/success.png')} 
-                style={styles.image}
-                resizeMode='cover'
-            /> */}
-                <Image 
-                source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT39RCTYAerd2mtIXNGV3y2KPZfMuTSZ1tV3Q&usqp=CAU'}} 
-                style={styles.image}
-                resizeMode='cover'
-                />
-            </View>
-            <View style={styles.resultContainer}>
-                <BodyText style={styles.resultText}>
-                Your phone needed{' '}
-                <Text style={styles.highlight}>{props.roundsNumber}</Text> rounds to
-                guess the number{' '}
-                <Text style={styles.highlight}>{props.userNumber}</Text>.
-                </BodyText>
-            </View>
-
-            <MainButton 
-            onPress={props.onRestart}>
-                New Game
-            </MainButton>
+          <TitleText>The Game is Over!</TitleText>
+          <View style={styles.imageContainer}>
+            <Image
+              source={require('../assets/success.png')}
+              // source={{
+              //   uri:
+              //     'https://cdn.pixabay.com/photo/2016/05/05/23/52/mountain-summit-1375015_960_720.jpg'
+              // }}
+              style={styles.image}
+              resizeMode="cover"
+            />
+          </View>
+          <View style={styles.resultContainer}>
+            <BodyText style={styles.resultText}>
+              Your phone needed{' '}
+              <Text style={styles.highlight}>{props.roundsNumber}</Text> rounds to
+              guess the number{' '}
+              <Text style={styles.highlight}>{props.userNumber}</Text>.
+            </BodyText>
+          </View>
+  
+          <MainButton onPress={props.onRestart}>NEW GAME</MainButton>
         </View>
-    </ScrollView>
+      </ScrollView>
     );
-};
-
-const styles = StyleSheet.create({
+  };
+  
+  const styles = StyleSheet.create({
     screen: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    }, 
-    image: {
-        width: '100%',
-        height: '100%'
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingVertical: 10
     },
     imageContainer: {
-        borderRadius: Dimensions.get('window').width * 0.7 / 2,
-        borderWidth: 3,
-        borderColor: 'black',
-        width: Dimensions.get('window').width * 0.7,
-        height: Dimensions.get('window').width * 0.7,
-        overflow: 'hidden',
-        marginVertical: Dimensions.get('window').height / 30
+      width: Dimensions.get('window').width * 0.7,
+      height: Dimensions.get('window').width * 0.7,
+      borderRadius: (Dimensions.get('window').width * 0.7) / 2,
+      borderWidth: 3,
+      borderColor: 'black',
+      overflow: 'hidden',
+      marginVertical: Dimensions.get('window').height / 30
+    },
+    image: {
+      width: '100%',
+      height: '100%'
     },
     resultContainer: {
-        marginHorizontal: 30,
-        marginVertical: Dimensions.get('window').height / 60
+      marginHorizontal: 30,
+      marginVertical: Dimensions.get('window').height / 60
     },
     resultText: {
-        textAlign: 'center',
-        fontSize: Dimensions.get('window').height < 400 ? 16 : 20
+      textAlign: 'center',
+      fontSize: Dimensions.get('window').height < 400 ? 16 : 20
     },
     highlight: {
-        color: Colors.primary,
-        fontFamily: 'open-sans-bold',
+      color: Colors.primary,
+      fontFamily: 'open-sans-bold'
     }
-});
-
-export default GameOverScreen;
+  });
+  
+  export default GameOverScreen;
